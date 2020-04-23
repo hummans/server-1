@@ -67,7 +67,7 @@
 				<div class="userPopoverMenuWrapper">
 					<button
 						v-click-outside="hideMenu"
-						class="icon-more"
+						class="button icon-more"
 						:aria-label="t('settings', 'Toggle user actions menu')"
 						@click.prevent="$emit('toggleMenu')" />
 					<div class="popovermenu" :class="{ 'open': openedMenu }" :aria-expanded="openedMenu">
@@ -174,10 +174,19 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	.cellText {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+}
+	.icon-more {
+		background-color: var(--color-main-background);
+		background-image: var(--icon-more-000);
+		border: 0;
+	}
+	//not final solution
+	.button:focus {
+		background-color: var(--color-background-dark)
 	}
 </style>
